@@ -23,7 +23,7 @@
     "no-console": "warn",
     "jsx-a11y/anchor-is-valid": "off", // This rule is not compatible with Next.js <Link /> component
     "@next/next/no-img-element": "off",
-    "prettier/prettier": 0
+    "@typescript-eslint/no-empty-interface": "off"
   },
 
   "overrides": [
