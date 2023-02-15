@@ -1,8 +1,7 @@
+import HomePage from 'domains/Home/Home'
 
 export default function Home() {
   return (
-    <main>
-      <p>hello world</p>
-    </main>
+    <HomePage />
   )
 }
