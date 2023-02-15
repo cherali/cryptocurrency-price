@@ -26,3 +26,6 @@ describe('Home page', () => {
     cy.get('tr:first-of-type td:first-of-type span span span').invoke('text').should('eq', 'Bitcoinbtc')
   })
 })
+
+// fix --isolatedModules build time
+export { }

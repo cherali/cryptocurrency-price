@@ -35,3 +35,6 @@
 //     }
 //   }
 // }
+
+// fix --isolatedModules build time
+export { }
