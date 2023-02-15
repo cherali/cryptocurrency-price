@@ -1,4 +1,6 @@
-export interface HomePageProps { }
+export interface HomePageProps { 
+  marketsList?: Array<MarketCoin>;
+}
 
 type MarketCoinOrderType =
   'gecko_desc' | 'gecko_asc' |

@@ -7,12 +7,8 @@
 
 describe('Home page', () => {
   it('passes', () => {
-    // intercept all routes // for waiting all requests done
-    cy.intercept('**/**').as('home')
     // visit localhost 3000
     cy.visit('localhost:3000')
-
-    cy.wait('@home')
 
     // get fist item on table -- with this config its bitcoin
     cy.get('tr:first-of-type td:first-of-type span span span').invoke('text').should('eq', 'Bitcoinbtc')

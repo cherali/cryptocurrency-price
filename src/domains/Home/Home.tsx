@@ -2,22 +2,12 @@ import { ChangeEvent, FC, useState } from 'react'
 import Table from 'components/basics/Table/Table'
 import { Column } from 'components/basics/Table'
 import Input from 'components/basics/Input/Input'
-import type { GetMarketCoinListParams, HomePageProps, MarketCoin } from './index.d'
-import { useGetMarketsListQuery } from './Home.services'
+import type { HomePageProps, MarketCoin } from './index.d'
 import { Asset, AssetName, SearchContainer, TableContainer } from './Home.styles'
 
 
-const MarketCoinData: GetMarketCoinListParams = {
-  vs_currency: 'usd', // hard coded currency for now
-  order: 'market_cap_desc',
-  per_page: 250, // return 250 item for now, max number that supportted by api
-  page: 1, // for testing lets go with first page and ignore pagination
-  sparkline: false,
-}
 
-
-const HomePage: FC<HomePageProps> = () => {
-  const { data: marketsList, isFetching } = useGetMarketsListQuery(MarketCoinData)
+const HomePage: FC<HomePageProps> = ({ marketsList }) => {
 
   const [filter, setFilter] = useState<string>('')
 
@@ -81,7 +71,7 @@ const HomePage: FC<HomePageProps> = () => {
         <Table<MarketCoin>
           columns={columns}
           data={filteredData}
-          loading={isFetching}
+          loading={false}
           showTableNumber
           cellKey='id'
         />
